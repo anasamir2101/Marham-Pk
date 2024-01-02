@@ -1,38 +1,234 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.main-welcome {
+  margin-top: 10rem;
+}
+.logo img {
+  width: 40%;
+  height: 40%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: black;
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.links li {
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.links a {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgb(40, 40, 92), #5f5c5c);
+    box-shadow: 0 0 10px 0 #000;
+    z-index: 0;
+  }
+
+  .links.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .links li {
+    margin: 0.5rem 0;
+  }
+  .links li a {
+    color: white;
+    font-size: 30px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 90%;
+  background-color: white;
+  margin: 10px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px 0 #000;
+  margin-top: 80px;
+}
+.container h1 {
+  margin-bottom: 20px;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.hospital-card {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 16px;
+  background: linear-gradient(to right, rgb(40, 40, 92), #5f5c5c);
+  border: 1px solid #ccc;
+  border-radius: 20px;
   color: white;
+  height: 150px;
+  box-shadow: 0 0 10px 0 #000;
 }
 
-.App-link {
-  color: #61dafb;
+.doctor-card {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, rgb(40, 40, 92), #5f5c5c);
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  color: white;
+  height: 150px;
+  box-shadow: 0 0 10px 0 #000;
+}
+.hospital-name {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.hospital-location {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 12px;
+}
+.icon {
+  text-align: left;
+}
+.doctor-info {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+.doctor-info h2 {
+  font-size: 24px;
+  font-weight: 200;
+  margin: 5px 0px;
+}
+.doctor-info h3 {
+  font-size: 18px;
+  font-weight: 200;
+  margin: 2px 0px;
+}
+.star {
+  color: yellow;
+}
+.review-price-container {
+  display: flex;
+  margin-top: auto;
+  margin-left: 8px;
+}
+.price {
+  margin-left: auto;
+  margin-bottom: 10px;
+  margin-right: 8px;
+  font-weight: bold;
+}
+.review {
+  display: flex;
+  column-gap: 6px;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 700px) {
+  .card-container {
+    grid-template-columns: 1fr 1fr;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media screen and (min-width: 1000px) {
+  .card-container {
+    grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+/* Search bar */
+.main-search {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-search select {
+  margin-bottom: 20px;
+  padding: 15px 10px;
+  border-radius: 10px;
+  outline: none;
+}
+.main-search input {
+  padding: 15px 10px;
+  border-radius: 10px;
+  outline: none;
+}
+.main-welcome {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.welcome {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+}
+.welcome span {
+  background-color: #014e78;
+  color: white;
+  border-radius: 50%;
+  padding: 10px 15px;
+  margin-right: 10px;
+}
+.best-doctor {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+.best-doctor h1 {
+  font-size: 24px;
 }
