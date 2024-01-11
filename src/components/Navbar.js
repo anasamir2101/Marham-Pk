@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from '../assets/marham-logo.png';
-import { FaBars } from 'react-icons/fa';
-import { Link } from 'react-scroll';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -18,24 +18,23 @@ const Navbar = () => {
       <button className='nav-toggle' onClick={handleToggleLinks}>
         <FaBars />
       </button>
+
       <ul className={`links ${showLinks ? 'show' : ''}`}>
+        <div className='small-screen-logo'>
+          <img src={logo} alt='' />
+        </div>
+        {showLinks && (
+          <button className='close' onClick={() => setShowLinks(false)}>
+            <FaTimes />
+          </button>
+        )}
         <li>
-          <Link
-            to='doctors'
-            smooth={true}
-            duration={500}
-            onClick={handleToggleLinks}
-          >
+          <Link to='/' onClick={() => setShowLinks(false)}>
             Doctors
           </Link>
         </li>
         <li>
-          <Link
-            to='hospitals'
-            smooth={true}
-            duration={500}
-            onClick={handleToggleLinks}
-          >
+          <Link to='/' onClick={() => setShowLinks(false)}>
             Hospitals
           </Link>
         </li>

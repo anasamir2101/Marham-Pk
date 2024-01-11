@@ -1,4 +1,4 @@
-export default [
+const HospitalsData = [
   {
     id: 1,
     name: 'Lady Rafat Medical Center',
@@ -41,9 +41,5 @@ export default [
     name: 'Sakina International Fertility Hospital',
     location: 'Nazaria-e-Pakistan Ave, B BLOCK BLock B',
   },
-  {
-    id: 9,
-    name: 'Sakina International Fertility Hospital Lrmc',
-    location: 'Nazaria-e-Pakistan Ave, B BLOCK BLock B',
-  },
 ];
+export default HospitalsData;
