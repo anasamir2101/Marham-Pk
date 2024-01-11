@@ -427,3 +427,8 @@
   flex-direction: column;
   margin-bottom: 10px;
 }
+@media screen and (min-width: 600px) {
+  .appointment-form form {
+    grid-template-columns: 1fr;
+  }
+}
