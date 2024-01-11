@@ -35,7 +35,7 @@ const DoctorsData = [
   {
     id: 4,
     name: 'Dr. M Nouman',
-    title: 'General Physician',
+    title: 'Physician',
     experience: '9',
     review: '4.9/5',
     price: '1,500',
@@ -57,7 +57,7 @@ const DoctorsData = [
   {
     id: 6,
     name: 'Dr. Ibrahim',
-    title: 'Orthopedic Surgeon',
+    title: 'Orthopedic',
     experience: '32',
     review: '4.9/5',
     price: '3,000',
